@@ -9,3 +9,7 @@ students = ["Bob", "Mary", "Lewis", "John", "Steven"]
 for index in range(0, len(students)):
     print(index + 1, students[index])
 
+# Add a student
+student_add = input("Enter a student name: ")
+students.append(student_add)
+
