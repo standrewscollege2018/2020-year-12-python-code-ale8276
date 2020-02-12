@@ -30,6 +30,12 @@ for index in range(0, len(students)):
 student_number = int(input("Enter number of student to change: "))
 new_name = input("Enter updated name: ")
 
+# Change student details
+students[student_number - 1] = new_name
+
+# Display all students in a list
+for index in range(0, len(students)):
+    print(index + 1, students[index])
 
 
 
