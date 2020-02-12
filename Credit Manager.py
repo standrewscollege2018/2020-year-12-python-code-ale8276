@@ -21,7 +21,7 @@ students.append(student_add)
 display_all_students()
         
 # Delete a student
-student_number = int(input("Enter the name of the student you want to delete: "))
+student_number = int(input("Enter the number of the student you want to delete: "))
 del students[student_number-1]
     
 # Display all students in a list
