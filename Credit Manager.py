@@ -9,32 +9,31 @@ def display_all_students():
 
 # This list stores student names
 students = ["Bob", "Mary", "Lewis", "John", "Steven"]
-
-# Display all students in a list
-for index in range(0, len(students)):
-    print(index + 1, students[index])
-
-# Add a student
-student_add = input("Enter a student name: ")
-students.append(student_add)
-
+    
 # Display all students in a list
 display_all_students()
     
+# Add a student
+student_add = input("Enter a student name: ")
+students.append(student_add)
+    
+# Display all students in a list
+display_all_students()
+        
 # Delete a student
 student_number = int(input("Enter the name of the student you want to delete: "))
 del students[student_number-1]
-
+    
 # Display all students in a list
 display_all_students()
-
+    
 # Change student details
 # Get details of which student to change and what the updated name is
 student_number = int(input("Enter number of student to change: "))
 new_name = input("Enter updated name: ")
-
+    
 # Change student details
 students[student_number - 1] = new_name
-
+    
 # Display all students in a list
 display_all_students()
