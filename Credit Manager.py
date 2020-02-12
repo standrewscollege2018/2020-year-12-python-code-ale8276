@@ -25,5 +25,12 @@ del students[student_number-1]
 for index in range(0, len(students)):
     print(index + 1, students[index])
 
+# Change student details
+# Get details of which student to change and what the updated name is
+student_number = int(input("Enter number of student to change: "))
+new_name = input("Enter updated name: ")
+
+
+
 
 
