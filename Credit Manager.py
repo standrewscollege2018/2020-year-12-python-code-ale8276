@@ -13,3 +13,11 @@ for index in range(0, len(students)):
 student_add = input("Enter a student name: ")
 students.append(student_add)
 
+# Display all students in a list
+for index in range(0, len(students)):
+    print(index + 1, students[index])
+    
+# Delete a student
+student_number = int(input("Enter the name of the student you want to delete: "))
+del students[student_number-1]
+
