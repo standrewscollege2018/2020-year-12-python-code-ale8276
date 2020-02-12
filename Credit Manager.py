@@ -21,3 +21,10 @@ for index in range(0, len(students)):
 student_number = int(input("Enter the name of the student you want to delete: "))
 del students[student_number-1]
 
+# Display all students in a list
+for index in range(0, len(students)):
+    print(index + 1, students[index])
+    
+# Change student details
+student_number = int(input("Enter number of student to change: "))
+new_name = input("Enter a new name: ")
