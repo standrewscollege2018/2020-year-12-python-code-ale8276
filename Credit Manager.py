@@ -31,9 +31,12 @@ display_all_students()
 # Get details of which student to change and what the updated name is
 student_number = int(input("Enter number of student to change: "))
 new_name = input("Enter updated name: ")
+new_total = input("Enter updated total: ")
     
 # Change student details
 students[student_number - 1] = new_name
+
+students[student_number - 1][0] = new_total
     
 # Display all students in a list
 display_all_students()
