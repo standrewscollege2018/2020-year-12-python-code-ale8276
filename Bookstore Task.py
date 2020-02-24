@@ -156,6 +156,38 @@ def remove_book():
     # Print the updated list of books    
     title_list(book_title)
      
-
-
-
+            
+# Add menu choice functionality
+def menu_choice():
+    
+    # Add a greeting, 
+    print("Welcome to Alyssa's bookstore!")
+    
+    ask = True
+    while ask == True:
+        # Add user input
+        user_choice = number_check("\nWhat would you like to do?\n1) Show book details\n2) Edit book details\n3) Add book details\n4) Delete book details\n5) Close bookstore\n", 6)
+        
+        # If user chooses option 1, the function book_details will print out a list of books
+        if user_choice == 1:
+            book_details()
+            
+        # If user chooses option 2, the function book_edit will start up  
+        elif user_choice == 2:
+            book_edit()
+            
+        # If user chooses option 3, the function add_book will start up  
+        elif user_choice == 3:
+            add_book()
+        
+        # If user chooses option 4, the function remove_book will start up      
+        elif user_choice == 4:
+            remove_book()
+            
+        # If user chooses option 5, prints a thank you message
+        elif user_choice == 5:
+            print("Thank you for coming to Alyssa's bookstore!")
+            ask = False
+        
+# Starts up the menu
+menu_choice()
