@@ -59,3 +59,103 @@ def book_details():
     for title, author, name in zip(book_title, book_author, book_price):
         print("Title: {}, Author: {}, Price: {}".format(title, author, name))
 
+# Function that allows the user to edit their book details
+def book_edit():
+    
+    user_option = number_check("What would you like to change?\n1) Book title\n2) Author name\n3) Book price",4)
+    
+    # If user chooses option 1, the function change_details will start up along with the list of book titles 
+    if user_option == 1:
+        change_details(book_title, 1)
+
+    # If user chooses option 2, the function change_details will start up along with the list of book authors  
+    elif user_option == 2:
+        change_details(book_author, 2)
+
+    # If user chooses option 3, the function change_details will start up along with the list of book prices        
+    elif user_option == 3:
+        change_details(book_price, 3)
+
+# Function that will display the list of book names
+def title_list(book_list):
+
+    counter = 0
+    
+    # For loop that will print the title of all the books in a list
+    for title in book_list:
+        
+        # Counter used to bullet point each book
+        counter = counter + 1
+        
+        # Print out the bullet points along with the title of the book
+        print(counter, ":", title)    
+    
+def details_blank_check():
+    
+    global new_details
+
+    # Input that allows the user to update the details of a book
+    new_details = blank_check("Enter the updated details of the book: ")
+        
+
+def details_number_check():
+    
+    global new_details
+
+    # Input that allows the user to update the details of a book
+    new_details = number_check("Enter the updated details of the book: ",100001)
+        
+        
+# Function used to allow users to change details about a book
+def change_details(book_list, user_option):
+    
+    # Function that is used to print out the list of books
+    title_list(book_title)
+          
+    # Input that allows the user to choose which book to edit  
+    user_choice = number_check("Which book would you like to edit?\n", (len(book_title)+1))
+    
+    if user_option == 3:
+        details_number_check()
+    
+    if user_option == 1 or user_option == 2:
+        details_blank_check()
+    
+    # Adds the updated details to the list
+    book_list[user_choice - 1] = new_details
+    
+    # Prints out the new details
+    title_list(book_list)
+
+# Function used to allow the user to add a book
+def add_book():
+ 
+     # Allows user to add the book they want   
+    book_add = blank_check("Enter the name of a book to add: ")
+    book_title.append(book_add)
+    
+    author_add = blank_check("Enter the name of the author: ")
+    book_author.append(author_add)
+    
+    price_add = number_check("Enter the price of the book: ", 10001)
+    book_price.append(price_add)
+     
+    # Print the updated list of books
+    
+    book_details()
+
+# Function used to remove books
+def remove_book():
+    
+    title_list(book_title)
+     
+     # Allows user to remove the book they want
+    book_number = number_check("Enter the number of a book to delete: ", (len(book_title)+1))
+    del book_title[book_number - 1]
+     
+    # Print the updated list of books    
+    title_list(book_title)
+     
+
+
+
