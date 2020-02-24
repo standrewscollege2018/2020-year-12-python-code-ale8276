@@ -53,3 +53,9 @@ def number_check(text, max_range):
 
     return user_choice
 
+# Function that allows the user to see the total number of books and details about it
+def book_details():
+    print("\nThere is a total of {} book(s) in stock:\n".format(len(book_title)))
+    for title, author, name in zip(book_title, book_author, book_price):
+        print("Title: {}, Author: {}, Price: {}".format(title, author, name))
+
