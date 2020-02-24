@@ -12,14 +12,12 @@ def blank_check(text):
     string_input = input(text)
 
     # While loop that will keep going until a string is inputted
-
     while True:
         if string_input:
             break
 
         # If the user does not input anything, i.e blank input, then an error message will be printed out
         # User will be prompted with an input
-
         else:
             print("Error! Please try again.")
             string_input = input()
@@ -79,27 +77,31 @@ def book_edit():
 # Function that will display the list of book names
 def title_list(book_list):
 
-    counter = 0
+    # Added a constant called COUNTER
+    COUNTER = 0
     
     # For loop that will print the title of all the books in a list
     for title in book_list:
         
         # Counter used to bullet point each book
-        counter = counter + 1
+        COUNTER = COUNTER + 1
         
         # Print out the bullet points along with the title of the book
-        print(counter, ":", title)    
-    
+        print(COUNTER, ":", title)    
+
+# Function used specifically to check for blank inputs within this piece of code
 def details_blank_check():
     
+    # Make new_details a global input/able to use outside the function
     global new_details
 
     # Input that allows the user to update the details of a book
     new_details = blank_check("Enter the updated details of the book: ")
         
-
+# Function used specifically to check for numbers/integers within this piece of code
 def details_number_check():
-    
+
+    # Make new_details a global input/able to use outside the function    
     global new_details
 
     # Input that allows the user to update the details of a book
@@ -115,9 +117,11 @@ def change_details(book_list, user_option):
     # Input that allows the user to choose which book to edit  
     user_choice = number_check("Which book would you like to edit?\n", (len(book_title)+1))
     
+    # If the user option is 3, start up this function
     if user_option == 3:
         details_number_check()
-    
+        
+    # If the user option is 4, start up this function    
     if user_option == 1 or user_option == 2:
         details_blank_check()
     
@@ -134,19 +138,21 @@ def add_book():
     book_add = blank_check("Enter the name of a book to add: ")
     book_title.append(book_add)
     
+    # Allows user to add the author they want   
     author_add = blank_check("Enter the name of the author: ")
     book_author.append(author_add)
     
+    # Allows user to add the price they want   
     price_add = number_check("Enter the price of the book: ", 10001)
     book_price.append(price_add)
      
     # Print the updated list of books
-    
     book_details()
 
 # Function used to remove books
 def remove_book():
     
+    # Start the function to print out the list of book titles
     title_list(book_title)
      
      # Allows user to remove the book they want
@@ -163,8 +169,10 @@ def menu_choice():
     # Add a greeting, 
     print("Welcome to Alyssa's bookstore!")
     
+    # Start a while loop
     ask = True
     while ask == True:
+        
         # Add user input
         user_choice = number_check("\nWhat would you like to do?\n1) Show book details\n2) Edit book details\n3) Add book details\n4) Delete book details\n5) Close bookstore\n", 6)
         
