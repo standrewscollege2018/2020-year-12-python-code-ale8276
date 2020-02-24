@@ -26,3 +26,30 @@ def blank_check(text):
 
     return string_input
 
+# Function that will be used to check whether the user has inputted an integer or a string
+# The text variable is a generic term and will be replaced by text- which will be used as instructions for the user
+# The max_range variable is used to keep the user from inputting an integer out of the range
+# This range value changes depending on what the range is for which particular question asked
+def number_check(text, max_range):
+
+    print(text)
+    user_choice = input()
+
+    # This loop will keep going until the user inputs an integer within range
+    while True:
+        try:
+            user_choice = int(user_choice)
+            if user_choice in range(1,max_range):
+                break
+
+            else:
+                print("Enter a number in range.")
+                user_choice = input()
+
+        # If the user inputs a string, it will give the user an error message as well as allow them to add another input
+        except:
+            print("Error! You did not enter an appropriate number. Please enter a number within the range.")
+            user_choice = input()
+
+    return user_choice
+
